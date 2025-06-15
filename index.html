@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Code Repositories</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="#home" class="navbar-brand">Portfolio</a>
+                <ul class="navbar-nav">
+                    <li><a href="#home" class="navbar-link">Home</a></li>
+                    <li><a href="#about" class="navbar-link">About</a></li>
+                    <li><a href="#projects" class="navbar-link">Projects</a></li>
+                    <li><a href="#code" class="navbar-link">Code</a></li>
+                    <li><a href="#contact" class="navbar-link">Contact</a></li>
+                </ul>
+                <button class="navbar-toggle" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="navbar-mobile" id="mobile-menu">
+            <a href="#home" class="navbar-link">Home</a>
+            <a href="#about" class="navbar-link">About</a>
+            <a href="#projects" class="navbar-link">Projects</a>
+            <a href="#code" class="navbar-link">Code</a>
+            <a href="#contact" class="navbar-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="hero-title">Welcome to My Portfolio</h1>
+            <p class="hero-subtitle">Explore my coding journey and projects</p>
+            <div class="hero-actions">
+                <a href="#code" class="btn-primary">View My Code</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-description">
+                    Passionate developer with expertise in multiple programming languages and technologies. 
+                    I enjoy solving complex problems and building efficient solutions.
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>My Journey</h3>
+                    <p>
+                        I'm a dedicated software developer with a strong foundation in computer science fundamentals 
+                        and practical experience across various programming languages including C, C++, Java, and Python.
+                    </p>
+                    <p>
+                        My passion lies in creating clean, efficient code and exploring new technologies. 
+                        I believe in continuous learning and sharing knowledge with the developer community.
+                    </p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: var(--color-c)">
+                            <i class="fab fa-cuttlefish"></i>
+                        </div>
+                        <h4>C Programming</h4>
+                        <p>System programming and algorithms</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: var(--color-cpp)">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>C++</h4>
+                        <p>Object-oriented programming and STL</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: var(--color-java)">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h4>Java</h4>
+                        <p>Enterprise applications and GUI development</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: var(--color-python)">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h4>Python</h4>
+                        <p>Data science and automation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">
+                    A showcase of my most significant projects and contributions to the developer community.
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Structures & Algorithms</h3>
+                    </div>
+                    <p class="project-description">
+                        Comprehensive implementation of fundamental data structures and algorithms 
+                        in multiple programming languages with detailed explanations.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">C++</span>
+                        <span class="project-tag">Algorithms</span>
+                        <span class="project-tag">DSA</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>GUI Applications</h3>
+                    </div>
+                    <p class="project-description">
+                        Desktop applications built with Java Swing, featuring intuitive user interfaces 
+                        and database integration for real-world use cases.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">Swing</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data Analysis Tools</h3>
+                    </div>
+                    <p class="project-description">
+                        Python-based data analysis and visualization tools using pandas, numpy, 
+                        and matplotlib for extracting insights from complex datasets.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Data Science</span>
+                        <span class="project-tag">ML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Repositories Section -->
+    <section id="code" class="section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h2 class="section-title">Code Repositories</h2>
+                <p class="section-description">
+                    Explore my programming journey through various languages and technologies. 
+                    Each repository represents learning, growth, and practical application.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="C">C</button>
+                <button class="filter-btn" data-filter="C++">C++</button>
+                <button class="filter-btn" data-filter="Java">Java</button>
+                <button class="filter-btn" data-filter="Python">Python</button>
+            </div>
+
+            <!-- Repository Grid -->
+            <div id="repo-grid" class="repo-grid">
+                <!-- Repository cards will be injected here -->
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading-state">
+                <div class="loading-spinner"></div>
+                <p class="state-message">Loading repositories...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state hidden">
+                <div class="state-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <p class="state-message">No repositories found for the selected filter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">
+                    Let's connect and discuss opportunities, collaborations, or just chat about technology.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/DibyadyutiDas" target="_blank" rel="noopener noreferrer">
+                                @DibyadyutiDas
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                Connect with me
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:contact@example.com">
+                                contact@example.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Portfolio. Built with passion and code.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

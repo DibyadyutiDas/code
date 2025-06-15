@@ -1,0 +1,68 @@
+[
+  {
+    "name": "C Programming Fundamentals",
+    "description": "Comprehensive collection of C programs covering basic to advanced concepts including data structures, algorithms, and system programming.",
+    "tags": ["C", "DSA", "Algorithms"],
+    "link": "https://github.com/DibyadyutiDas/c",
+    "language": "C",
+    "stars": 15,
+    "forks": 8,
+    "lastUpdated": "2024-12-15",
+    "topics": ["programming", "data-structures", "algorithms"]
+  },
+  {
+    "name": "C++ STL & OOP Mastery",
+    "description": "Advanced C++ programming with Standard Template Library, object-oriented programming concepts, and modern C++ features.",
+    "tags": ["C++", "STL", "OOP"],
+    "link": "https://github.com/DibyadyutiDas/cpp",
+    "language": "C++",
+    "stars": 23,
+    "forks": 12,
+    "lastUpdated": "2024-12-10",
+    "topics": ["cpp", "stl", "object-oriented"]
+  },
+  {
+    "name": "Java Enterprise Solutions",
+    "description": "Full-stack Java applications featuring GUI development with Swing, database integration with MySQL, and enterprise patterns.",
+    "tags": ["Java", "Swing", "MySQL", "GUI"],
+    "link": "https://github.com/DibyadyutiDas/java",
+    "language": "Java",
+    "stars": 31,
+    "forks": 18,
+    "lastUpdated": "2024-12-08",
+    "topics": ["java", "swing", "database", "gui"]
+  },
+  {
+    "name": "Python Data Science Toolkit",
+    "description": "Data analysis, machine learning projects, and automation scripts using Python with popular libraries like pandas, numpy, and scikit-learn.",
+    "tags": ["Python", "Data Science", "ML", "Automation"],
+    "link": "https://github.com/DibyadyutiDas/python-ds",
+    "language": "Python",
+    "stars": 42,
+    "forks": 25,
+    "lastUpdated": "2024-12-12",
+    "topics": ["python", "data-science", "machine-learning"]
+  },
+  {
+    "name": "Web Development Portfolio",
+    "description": "Modern web applications built with HTML5, CSS3, JavaScript ES6+, and various frameworks showcasing responsive design principles.",
+    "tags": ["JavaScript", "HTML5", "CSS3", "Responsive"],
+    "link": "https://github.com/DibyadyutiDas/web-portfolio",
+    "language": "JavaScript",
+    "stars": 28,
+    "forks": 14,
+    "lastUpdated": "2024-12-14",
+    "topics": ["web-development", "responsive-design", "javascript"]
+  },
+  {
+    "name": "Algorithm Challenges Hub",
+    "description": "Solutions to competitive programming problems from various platforms including LeetCode, HackerRank, and CodeChef with detailed explanations.",
+    "tags": ["Algorithms", "Competitive Programming", "Problem Solving"],
+    "link": "https://github.com/DibyadyutiDas/algorithms",
+    "language": "C++",
+    "stars": 67,
+    "forks": 34,
+    "lastUpdated": "2024-12-16",
+    "topics": ["algorithms", "competitive-programming", "problem-solving"]
+  }
+]
