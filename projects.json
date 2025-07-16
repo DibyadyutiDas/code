@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "BulkBuy - Group Buying Platform",
+    "description": "Smart group buying platform connecting users for bulk purchases with advanced features like real-time notifications, secure payment processing, dynamic pricing algorithms, comprehensive user management system, detailed analytics dashboard, multi-vendor support, inventory tracking, order management, shipping integration, and much more functionality.",
+    "icon": "fas fa-shopping-cart",
+    "tags": ["React", "Node.js", "MongoDB", "TypeScript", "Full-Stack"],
+    "github_url": "https://github.com/DibyadyutiDas/group-buying-platform",
+    "stars": 15,
+    "language": "TypeScript",
+    "featured": true,
+    "created_date": "2025-01-15",
+    "last_updated": "2025-07-14"
+  },
+  {
+    "id": 2,
+    "name": "DevKit - Developer Toolkit",
+    "description": "Curated collection of developer tools and boilerplates. Includes starter templates for multiple languages. Automation scripts for routine development tasks.",
+    "icon": "fas fa-tools",
+    "tags": ["Developer Tools", "Boilerplates", "Automation", "Multi-Language"],
+    "github_url": "https://github.com/DibyadyutiDas/devKit",
+    "stars": 8,
+    "language": "Shell",
+    "featured": true,
+    "created_date": "2025-01-10",
+    "last_updated": "2025-07-15"
+  },
+  {
+    "id": 3,
+    "name": "WriteAI - Custom Handwriting Converter",
+    "description": "AI-powered text-to-handwriting converter with multiple styles. Features custom handwriting upload and style selection. Modern web interface with advanced AI techniques.",
+    "icon": "fas fa-pen-fancy",
+    "tags": ["AI", "Machine Learning", "Web App", "JavaScript", "CSS"],
+    "github_url": "https://github.com/DibyadyutiDas/custom-handwriting",
+    "stars": 12,
+    "language": "JavaScript",
+    "featured": true,
+    "created_date": "2025-01-01",
+    "last_updated": "2025-07-10"
+  },
+  {
+    "id": 4,
+    "name": "Digital Detox - Mobile Addiction Helper",
+    "description": "Data-driven app for controlling screen time and mobile addiction. Features tracking, focus mode, and gamified challenges. Privacy-first approach with smart reminders.",
+    "icon": "fas fa-mobile-alt",
+    "tags": ["Mobile App", "Flutter", "Digital Wellbeing", "Productivity"],
+    "github_url": "https://github.com/DibyadyutiDas/Digital_Detox",
+    "stars": 6,
+    "language": "Dart",
+    "featured": true,
+    "created_date": "2025-02-01",
+    "last_updated": "2025-07-05"
+  },
+  {
+    "id": 5,
+    "name": "Modern Banking System",
+    "description": "Comprehensive Java Swing banking application with authentication. Features account management, transfers, and transaction history. Modern UI design with secure data management.",
+    "icon": "fas fa-university",
+    "tags": ["Java", "Swing", "Banking", "Desktop App", "GUI"],
+    "github_url": "https://github.com/DibyadyutiDas/bank_app",
+    "stars": 9,
+    "language": "Java",
+    "featured": true,
+    "created_date": "2025-01-20",
+    "last_updated": "2025-07-08"
+  },
+  {
+    "id": 6,
+    "name": "Food Finder - Vegetarian Restaurant Locator",
+    "description": "React-based app for finding vegetarian and Satvik restaurants. Features advanced filters and location-based search. Includes reviews, ratings, and detailed restaurant information.",
+    "icon": "fas fa-utensils",
+    "tags": ["React", "TypeScript", "Maps API", "Web App"],
+    "github_url": "https://github.com/DibyadyutiDas/Food-finder",
+    "stars": 11,
+    "language": "TypeScript",
+    "featured": true,
+    "created_date": "2025-01-25",
+    "last_updated": "2025-07-12"
+  }
+]

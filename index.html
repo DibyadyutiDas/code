@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/repo-cards.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -39,7 +40,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1 class="hero-title">Welcome to My Portfolio</h1>
+            <h1 class="hero-title">Welcome to My Coding Portfolio</h1>
             <p class="hero-subtitle">Explore my coding journey and projects</p>
             <div class="hero-actions">
                 <a href="#code" class="btn-primary">View My Code</a>
@@ -67,7 +68,7 @@
                     <h3>My Journey</h3>
                     <p>
                         I'm a dedicated software developer with a strong foundation in computer science fundamentals 
-                        and practical experience across various programming languages including C, C++, Java, and Python.
+                        and practical experience across various programming languages including C, C++, Java, and web development.
                     </p>
                     <p>
                         My passion lies in creating clean, efficient code and exploring new technologies. 
@@ -98,11 +99,11 @@
                         <p>Enterprise applications and GUI development</p>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-icon" style="color: var(--color-python)">
-                            <i class="fab fa-python"></i>
+                        <div class="skill-icon" style="color: var(--color-web)">
+                            <i class="fab fa-web"></i>
                         </div>
-                        <h4>Python</h4>
-                        <p>Data science and automation</p>
+                        <h4>Web Development</h4>
+                        <p>HTML, CSS, JavaScript, and modern frameworks</p>
                     </div>
                 </div>
             </div>
@@ -123,59 +124,7 @@
             </div>
             
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Data Structures & Algorithms</h3>
-                    </div>
-                    <p class="project-description">
-                        Comprehensive implementation of fundamental data structures and algorithms 
-                        in multiple programming languages with detailed explanations.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">C++</span>
-                        <span class="project-tag">Algorithms</span>
-                        <span class="project-tag">DSA</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>GUI Applications</h3>
-                    </div>
-                    <p class="project-description">
-                        Desktop applications built with Java Swing, featuring intuitive user interfaces 
-                        and database integration for real-world use cases.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">Java</span>
-                        <span class="project-tag">Swing</span>
-                        <span class="project-tag">MySQL</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Data Analysis Tools</h3>
-                    </div>
-                    <p class="project-description">
-                        Python-based data analysis and visualization tools using pandas, numpy, 
-                        and matplotlib for extracting insights from complex datasets.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Data Science</span>
-                        <span class="project-tag">ML</span>
-                    </div>
-                </div>
+                <!-- Projects will be dynamically loaded from projects.json -->
             </div>
         </div>
     </section>

@@ -1,16 +1,21 @@
-// Repository data and functionality
+// Repository and Project Manager - Connects to real GitHub data
 class RepositoryManager {
     constructor() {
         this.repositories = [];
         this.filteredRepositories = [];
+        this.projects = [];
         this.currentFilter = 'all';
         this.init();
     }
 
     async init() {
-        await this.loadRepositories();
+        await Promise.all([
+            this.loadRepositories(),
+            this.loadProjects()
+        ]);
         this.setupEventListeners();
         this.renderRepositories();
+        this.renderProjects();
         this.updateActiveNavLink();
     }
 
@@ -23,6 +28,15 @@ class RepositoryManager {
         } catch (error) {
             console.error('Error loading repositories:', error);
             this.showError();
+        }
+    }
+
+    async loadProjects() {
+        try {
+            const response = await fetch('projects.json');
+            this.projects = await response.json();
+        } catch (error) {
+            console.error('Error loading projects:', error);
         }
     }
 
@@ -129,7 +143,7 @@ class RepositoryManager {
             this.filteredRepositories = [...this.repositories];
         } else {
             this.filteredRepositories = this.repositories.filter(repo => 
-                repo.language === filter || repo.tags.includes(filter)
+                repo.language === filter
             );
         }
         
@@ -156,19 +170,29 @@ class RepositoryManager {
 
     createRepositoryCard(repo) {
         const languageColors = {
-            'C': 'var(--color-c)',
-            'C++': 'var(--color-cpp)',
-            'Java': 'var(--color-java)',
-            'Python': 'var(--color-python)',
-            'JavaScript': 'var(--color-javascript)'
+            'C': '#555555',
+            'C++': '#f34b7d',
+            'Java': '#b07219',
+            'Python': '#3572A5',
+            'JavaScript': '#f1e05a',
+            'TypeScript': '#2b7489',
+            'HTML': '#e34c26',
+            'CSS': '#563d7c',
+            'Shell': '#89e051'
         };
 
-        const languageColor = languageColors[repo.language] || 'var(--color-secondary)';
-        const formattedDate = new Date(repo.lastUpdated).toLocaleDateString('en-US', {
+        const languageColor = languageColors[repo.language] || '#64748b';
+        const formattedDate = new Date(repo.updated_at).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'short',
             day: 'numeric'
         });
+
+        // Handle empty or null homepage
+        const homepageLink = repo.homepage && repo.homepage !== "" ? 
+            `<a href="${repo.homepage}" target="_blank" rel="noopener noreferrer" class="repo-demo-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>` : '';
 
         return `
             <div class="repo-card fade-in-up">
@@ -181,46 +205,44 @@ class RepositoryManager {
                         <h3>${repo.name}</h3>
                         <div class="repo-language">
                             <span class="language-dot" style="background-color: ${languageColor}"></span>
-                            <span>${repo.language}</span>
+                            <span>${repo.language || 'No language'}</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Description -->
-                <p class="repo-description">${repo.description}</p>
-
-                <!-- Tags -->
-                <div class="repo-tags">
-                    ${repo.tags.slice(0, 3).map(tag => `
-                        <span class="repo-tag">${tag}</span>
-                    `).join('')}
-                    ${repo.tags.length > 3 ? `<span class="repo-tag">+${repo.tags.length - 3}</span>` : ''}
-                </div>
+                <p class="repo-description">${repo.description || 'No description available'}</p>
 
                 <!-- Stats -->
                 <div class="repo-stats">
                     <div class="repo-stats-left">
                         <div class="repo-stat">
                             <i class="fas fa-star" style="color: #fbbf24"></i>
-                            <span>${repo.stars}</span>
+                            <span>${repo.stargazers_count}</span>
                         </div>
                         <div class="repo-stat">
                             <i class="fas fa-code-branch" style="color: #60a5fa"></i>
-                            <span>${repo.forks}</span>
+                            <span>${repo.forks_count}</span>
+                        </div>
+                        <div class="repo-stat">
+                            <i class="fas fa-eye" style="color: #8b5cf6"></i>
+                            <span>${repo.watchers_count}</span>
                         </div>
                     </div>
                     <span class="repo-updated">Updated ${formattedDate}</span>
                 </div>
 
-                <!-- Action Button -->
-                <a href="${repo.link}" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="repo-link">
-                    <i class="fab fa-github"></i>
-                    View Repository
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
+                <!-- Action Buttons -->
+                <div class="repo-actions">
+                    <a href="${repo.html_url}" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="repo-link">
+                        <i class="fab fa-github"></i>
+                        View Repository
+                    </a>
+                    ${homepageLink}
+                </div>
             </div>
         `;
     }
@@ -236,6 +258,76 @@ class RepositoryManager {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
             }, index * 100);
+        });
+    }
+
+    renderProjects() {
+        const projectsGrid = document.querySelector('.projects-grid');
+        if (!projectsGrid || !this.projects.length) return;
+
+        const featuredProjects = this.projects.filter(project => project.featured);
+        
+        projectsGrid.innerHTML = featuredProjects.map(project => this.createProjectCard(project)).join('');
+        
+        // Add animation to project cards
+        this.animateProjectCards();
+    }
+
+    createProjectCard(project) {
+        const formattedDate = new Date(project.last_updated).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+
+        return `
+            <div class="project-card fade-in-up">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="${project.icon}"></i>
+                    </div>
+                    <h3>${project.name}</h3>
+                </div>
+                <p class="project-description">
+                    ${project.description}
+                </p>
+                <div class="project-tags">
+                    ${project.tags.map(tag => `
+                        <span class="project-tag">${tag}</span>
+                    `).join('')}
+                </div>
+                <div class="project-stats">
+                    <div class="project-stat">
+                        <i class="fas fa-star" style="color: #fbbf24"></i>
+                        <span>${project.stars}</span>
+                    </div>
+                    <div class="project-stat">
+                        <i class="fas fa-code-branch" style="color: #60a5fa"></i>
+                        <span>${project.language}</span>
+                    </div>
+                    <span class="project-updated">Updated ${formattedDate}</span>
+                </div>
+                <div class="project-actions">
+                    <a href="${project.github_url}" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <i class="fab fa-github"></i>
+                        View Repository
+                    </a>
+                </div>
+            </div>
+        `;
+    }
+
+    animateProjectCards() {
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 150);
         });
     }
 

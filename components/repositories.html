@@ -1,0 +1,46 @@
+<!-- Code Repositories Section -->
+<section id="code" class="section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <div class="section-icon">
+                <i class="fab fa-github"></i>
+            </div>
+            <h2 class="section-title">Code Repositories</h2>
+            <p class="section-description">
+                Explore my programming journey through various languages and technologies. 
+                Each repository represents learning, growth, and practical application.
+            </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All (21)</button>
+            <button class="filter-btn" data-filter="C">C</button>
+            <button class="filter-btn" data-filter="C++">C++</button>
+            <button class="filter-btn" data-filter="Java">Java</button>
+            <button class="filter-btn" data-filter="TypeScript">TypeScript</button>
+            <button class="filter-btn" data-filter="HTML">HTML</button>
+            <button class="filter-btn" data-filter="CSS">CSS</button>
+        </div>
+
+        <!-- Repository Grid -->
+        <div id="repo-grid" class="repo-grid">
+            <!-- Repository cards will be injected here -->
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading-state">
+            <div class="loading-spinner"></div>
+            <p class="state-message">Loading repositories...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state hidden">
+            <div class="state-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <p class="state-message">No repositories found for the selected filter.</p>
+        </div>
+    </div>
+</section>
