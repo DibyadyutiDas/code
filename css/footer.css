@@ -138,6 +138,12 @@
         text-align: center;
     }
     
+    /* Hide Navigation and Technologies sections on mobile */
+    .footer-section:nth-child(1),
+    .footer-section:nth-child(2) {
+        display: none;
+    }
+    
     .footer-social {
         justify-content: center;
     }

@@ -132,40 +132,15 @@
 
 .repo-actions {
     display: flex;
+    justify-content: center;
     gap: var(--space-sm);
     flex-wrap: wrap;
     margin-top: var(--space-md);
 }
 
-.repo-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.repo-actions .btn {
     flex: 1;
-    padding: var(--space-md);
-    background-color: var(--color-primary);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--radius-xl);
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: all var(--transition-normal);
-    gap: var(--space-sm);
     min-width: 0;
-}
-
-.repo-link:hover {
-    background-color: var(--color-primary-light);
-    transform: translateY(-1px);
-}
-
-.repo-link i:last-child {
-    opacity: 0.7;
-    transition: opacity var(--transition-normal);
-}
-
-.repo-link:hover i:last-child {
-    opacity: 1;
 }
 
 .repo-demo-link {

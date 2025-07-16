@@ -22,10 +22,9 @@ class ComponentLoader {
             await Promise.all(loadPromises);
             console.log('All components loaded successfully');
             
-            // Initialize the main application after components are loaded
-            if (typeof RepositoryManager !== 'undefined') {
-                new RepositoryManager();
-            }
+            // Trigger custom event when components are ready
+            document.dispatchEvent(new CustomEvent('componentsLoaded'));
+            
         } catch (error) {
             console.error('Error loading components:', error);
         }

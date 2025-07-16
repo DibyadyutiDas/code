@@ -22,11 +22,19 @@
 }
 
 .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-primary);
     text-decoration: none;
     transition: color var(--transition-normal);
+}
+
+.navbar-brand i {
+    font-size: 1.5rem;
+    color: var(--color-accent);
 }
 
 .navbar-brand:hover {

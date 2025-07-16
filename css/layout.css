@@ -20,6 +20,12 @@
 /* Section Styles */
 .section {
     padding: var(--space-3xl) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.section:first-of-type {
+    padding-top: 0;
 }
 
 .section-alt {
@@ -39,6 +45,7 @@
     height: 4rem;
     background-color: rgba(59, 130, 246, 0.1);
     border-radius: var(--radius-2xl);
+    margin-top: var(--space-md);
     margin-bottom: var(--space-lg);
     font-size: 1.5rem;
     color: var(--color-accent);

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cpp",
+    "title": "C++",
+    "description": "Object-oriented programming and DSA",
+    "icon": "fas fa-code",
+    "color": "var(--color-cpp)"
+  },
+  {
+    "id": "java",
+    "title": "Java",
+    "description": "Enterprise applications and GUI development",
+    "icon": "fab fa-java",
+    "color": "var(--color-java)"
+  },
+  {
+    "id": "dsa",
+    "title": "DSA",
+    "description": "Algorithms and data structure design",
+    "icon": "fas fa-project-diagram",
+    "color": "var(--color-dsa)"
+  },
+  {
+    "id": "database",
+    "title": "Database",
+    "description": "SQL, NoSQL, and database design",
+    "icon": "fas fa-database",
+    "color": "var(--color-secondary)"
+  }
+]
