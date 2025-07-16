@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Navigation Styles
+   ========================================================================== */
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    padding: 0 var(--space-md);
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.navbar-brand:hover {
+    color: var(--color-accent);
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+}
+
+.navbar-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.navbar-link:hover {
+    color: var(--color-accent);
+    background-color: rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+.navbar-link.active {
+    color: var(--color-accent);
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.navbar-toggle:hover {
+    background-color: var(--color-border-light);
+    color: var(--color-primary);
+}
+
+/* Mobile Navigation */
+.navbar-mobile {
+    display: none;
+    background-color: var(--color-card);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-md);
+}
+
+.navbar-mobile.show {
+    display: block;
+}
+
+.navbar-mobile .navbar-link {
+    display: block;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-xs);
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .navbar-nav {
+        display: none;
+    }
+    
+    .navbar-toggle {
+        display: block;
+    }
+}

@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Hero Section Styles
+   ========================================================================== */
+
+.hero {
+    background: var(--gradient-surface);
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    color: var(--color-secondary);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+}
+
+.hero-about {
+    max-width: 700px;
+    margin: 0 auto var(--space-xl);
+    padding: var(--space-xl);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.hero-about h3 {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.hero-about p {
+    color: var(--color-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: var(--space-md);
+}
+
+.hero-about p:last-child {
+    margin-bottom: 0;
+}
+
+.hero-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-top: var(--space-lg);
+}
+
+.hero-skill-tag {
+    background-color: var(--color-accent);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+}
+
+.hero-skill-tag:hover {
+    background-color: var(--color-accent-dark);
+    transform: translateY(-1px);
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Mobile Hero Styles */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding: var(--space-xl) 0;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-lg);
+    }
+
+    .hero-about {
+        margin: 0 auto var(--space-lg);
+        padding: var(--space-lg);
+    }
+
+    .hero-about h3 {
+        font-size: 1.125rem;
+    }
+
+    .hero-about p {
+        font-size: 0.9rem;
+    }
+
+    .hero-skills {
+        gap: var(--space-xs);
+    }
+
+    .hero-skill-tag {
+        font-size: 0.75rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+}
