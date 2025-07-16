@@ -155,22 +155,39 @@
 
 /* Component Loading States */
 .component-loading {
-    min-height: 200px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-background-light);
-    border-radius: 0.5rem;
-    margin: 1rem 0;
+    background: transparent;
+    padding: var(--space-xl);
 }
 
 .component-error {
-    background: #fee2e2;
-    color: #dc2626;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--color-error);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
     text-align: center;
-    margin: 1rem 0;
+    margin: var(--space-md) 0;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    font-size: 0.875rem;
+}
+
+/* Component fade-in animation */
+.component-loaded {
+    animation: componentFadeIn 0.5s ease-in-out;
+}
+
+@keyframes componentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Enhanced Repository Cards */

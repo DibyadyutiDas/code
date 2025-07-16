@@ -8,252 +8,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/repo-cards.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - Loaded dynamically -->
     <nav class="navbar">
-        <div class="container">
-            <div class="navbar-container">
-                <a href="#home" class="navbar-brand">Portfolio</a>
-                <ul class="navbar-nav">
-                    <li><a href="#home" class="navbar-link">Home</a></li>
-                    <li><a href="#about" class="navbar-link">About</a></li>
-                    <li><a href="#projects" class="navbar-link">Projects</a></li>
-                    <li><a href="#code" class="navbar-link">Code</a></li>
-                    <li><a href="#contact" class="navbar-link">Contact</a></li>
-                </ul>
-                <button class="navbar-toggle" id="mobile-menu-button">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile Navigation -->
-        <div class="navbar-mobile" id="mobile-menu">
-            <a href="#home" class="navbar-link">Home</a>
-            <a href="#about" class="navbar-link">About</a>
-            <a href="#projects" class="navbar-link">Projects</a>
-            <a href="#code" class="navbar-link">Code</a>
-            <a href="#contact" class="navbar-link">Contact</a>
+        <div class="component-loading">
+            <div class="loading-spinner"></div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1 class="hero-title">Welcome to My Coding Portfolio</h1>
-            <p class="hero-subtitle">Explore my coding journey and projects</p>
-            <div class="hero-actions">
-                <a href="#code" class="btn-primary">View My Code</a>
-                <a href="#contact" class="btn-secondary">Get In Touch</a>
-            </div>
+    <!-- Hero Section - Loaded dynamically -->
+    <div id="hero-section">
+        <div class="component-loading">
+            <div class="loading-spinner"></div>
         </div>
-    </section>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                <h2 class="section-title">About Me</h2>
-                <p class="section-description">
-                    Passionate developer with expertise in multiple programming languages and technologies. 
-                    I enjoy solving complex problems and building efficient solutions.
-                </p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>My Journey</h3>
-                    <p>
-                        I'm a dedicated software developer with a strong foundation in computer science fundamentals 
-                        and practical experience across various programming languages including C, C++, Java, and web development.
-                    </p>
-                    <p>
-                        My passion lies in creating clean, efficient code and exploring new technologies. 
-                        I believe in continuous learning and sharing knowledge with the developer community.
-                    </p>
-                </div>
-                
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: var(--color-c)">
-                            <i class="fab fa-cuttlefish"></i>
-                        </div>
-                        <h4>C Programming</h4>
-                        <p>System programming and algorithms</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: var(--color-cpp)">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4>C++</h4>
-                        <p>Object-oriented programming and STL</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: var(--color-java)">
-                            <i class="fab fa-java"></i>
-                        </div>
-                        <h4>Java</h4>
-                        <p>Enterprise applications and GUI development</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: var(--color-web)">
-                            <i class="fab fa-web"></i>
-                        </div>
-                        <h4>Web Development</h4>
-                        <p>HTML, CSS, JavaScript, and modern frameworks</p>
-                    </div>
-                </div>
-            </div>
+    <!-- About Section - Loaded dynamically -->
+    <div id="about-section">
+        <div class="component-loading">
+            <div class="loading-spinner"></div>
         </div>
-    </section>
+    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-description">
-                    A showcase of my most significant projects and contributions to the developer community.
-                </p>
-            </div>
-            
-            <div class="projects-grid">
-                <!-- Projects will be dynamically loaded from projects.json -->
-            </div>
+    <!-- Projects Section - Loaded dynamically -->
+    <div id="projects-section">
+        <div class="component-loading">
+            <div class="loading-spinner"></div>
         </div>
-    </section>
+    </div>
 
-    <!-- Code Repositories Section -->
-    <section id="code" class="section">
-        <div class="container">
-            <!-- Section Header -->
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h2 class="section-title">Code Repositories</h2>
-                <p class="section-description">
-                    Explore my programming journey through various languages and technologies. 
-                    Each repository represents learning, growth, and practical application.
-                </p>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="C">C</button>
-                <button class="filter-btn" data-filter="C++">C++</button>
-                <button class="filter-btn" data-filter="Java">Java</button>
-                <button class="filter-btn" data-filter="Python">Python</button>
-            </div>
-
-            <!-- Repository Grid -->
-            <div id="repo-grid" class="repo-grid">
-                <!-- Repository cards will be injected here -->
-            </div>
-
-            <!-- Loading State -->
-            <div id="loading" class="loading-state">
-                <div class="loading-spinner"></div>
-                <p class="state-message">Loading repositories...</p>
-            </div>
-
-            <!-- Empty State -->
-            <div id="empty-state" class="empty-state hidden">
-                <div class="state-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <p class="state-message">No repositories found for the selected filter.</p>
-            </div>
+    <!-- Code Repositories Section - Loaded dynamically -->
+    <div id="repositories-section">
+        <div class="component-loading">
+            <div class="loading-spinner"></div>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-description">
-                    Let's connect and discuss opportunities, collaborations, or just chat about technology.
-                </p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/DibyadyutiDas" target="_blank" rel="noopener noreferrer">
-                                @DibyadyutiDas
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                Connect with me
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:contact@example.com">
-                                contact@example.com
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
+    <!-- Contact Section - Loaded dynamically -->
+    <div id="contact-section">
+        <div class="component-loading">
+            <div class="loading-spinner"></div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Portfolio. Built with passion and code.</p>
+    <!-- Footer - Loaded dynamically -->
+    <footer>
+        <div class="component-loading">
+            <div class="loading-spinner"></div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
