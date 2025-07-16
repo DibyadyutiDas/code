@@ -90,6 +90,9 @@ class RepositoryManager {
         if (contactForm) {
             contactForm.addEventListener('submit', this.handleContactForm.bind(this));
         }
+
+        // Add form validation
+        this.setupFormValidation();
     }
 
     updateActiveNavLink() {
@@ -121,12 +124,164 @@ class RepositoryManager {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
         
-        // Here you would typically send the data to a server
-        console.log('Contact form submitted:', data);
+        // Validate form data
+        if (!this.validateContactForm(data)) {
+            return;
+        }
         
-        // Show success message (you can customize this)
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        e.target.reset();
+        // Show loading state
+        const submitButton = e.target.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitButton.disabled = true;
+        
+        // Simulate form submission (replace with actual API call)
+        setTimeout(() => {
+            // Reset button
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+            
+            // Show success message
+            this.showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+            e.target.reset();
+        }, 2000);
+        
+        console.log('Contact form submitted:', data);
+    }
+
+    validateContactForm(data) {
+        const errors = [];
+        
+        if (!data.name || data.name.trim().length < 2) {
+            errors.push('Name must be at least 2 characters long');
+        }
+        
+        if (!data.email || !this.isValidEmail(data.email)) {
+            errors.push('Please enter a valid email address');
+        }
+        
+        if (!data.subject || data.subject.trim().length < 3) {
+            errors.push('Subject must be at least 3 characters long');
+        }
+        
+        if (!data.message || data.message.trim().length < 10) {
+            errors.push('Message must be at least 10 characters long');
+        }
+        
+        if (errors.length > 0) {
+            this.showNotification(errors.join('. '), 'error');
+            return false;
+        }
+        
+        return true;
+    }
+
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    setupFormValidation() {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+        
+        const inputs = form.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                this.validateField(input);
+            });
+            
+            input.addEventListener('input', () => {
+                this.clearFieldError(input);
+            });
+        });
+    }
+
+    validateField(field) {
+        const value = field.value.trim();
+        let isValid = true;
+        let errorMessage = '';
+        
+        switch (field.type) {
+            case 'text':
+                if (field.name === 'name' && value.length < 2) {
+                    isValid = false;
+                    errorMessage = 'Name must be at least 2 characters long';
+                } else if (field.name === 'subject' && value.length < 3) {
+                    isValid = false;
+                    errorMessage = 'Subject must be at least 3 characters long';
+                }
+                break;
+            case 'email':
+                if (!this.isValidEmail(value)) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid email address';
+                }
+                break;
+            case 'textarea':
+                if (value.length < 10) {
+                    isValid = false;
+                    errorMessage = 'Message must be at least 10 characters long';
+                }
+                break;
+        }
+        
+        if (!isValid) {
+            this.showFieldError(field, errorMessage);
+        } else {
+            this.clearFieldError(field);
+        }
+        
+        return isValid;
+    }
+
+    showFieldError(field, message) {
+        this.clearFieldError(field);
+        
+        field.style.borderColor = '#ef4444';
+        
+        const errorElement = document.createElement('span');
+        errorElement.className = 'field-error';
+        errorElement.textContent = message;
+        errorElement.style.color = '#ef4444';
+        errorElement.style.fontSize = '0.75rem';
+        errorElement.style.marginTop = '0.25rem';
+        errorElement.style.display = 'block';
+        
+        field.parentNode.appendChild(errorElement);
+    }
+
+    clearFieldError(field) {
+        field.style.borderColor = '';
+        const errorElement = field.parentNode.querySelector('.field-error');
+        if (errorElement) {
+            errorElement.remove();
+        }
+    }
+
+    showNotification(message, type = 'info') {
+        // Remove existing notifications
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notification => notification.remove());
+        
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        // Show notification
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 100);
+        
+        // Hide notification after 5 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 5000);
     }
 
     setActiveFilter(activeButton) {
